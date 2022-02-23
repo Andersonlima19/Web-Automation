@@ -1,0 +1,92 @@
+[
+  {
+    "line": 4,
+    "elements": [
+      {
+        "start_timestamp": "2022-02-23T23:13:54.941Z",
+        "line": 8,
+        "name": "CT01 - Cadastrar automovel no seguro",
+        "description": "",
+        "id": "acessar-o-site;ct01---cadastrar-automovel-no-seguro",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 14192811700,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "que eu esteja no \"http://sampleapp.tricentis.com/101/index.php\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"http://sampleapp.tricentis.com/101/index.php\"",
+                  "offset": 17
+                }
+              ],
+              "location": "Tests.CadastroSeguro.que_eu_esteja_no(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 14135808500,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "preencher todas as informacoes",
+            "match": {
+              "location": "Tests.CadastroSeguro.preencher_todas_as_informacoes()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1218069700,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Enviar a cotacao",
+            "match": {
+              "location": "Tests.CadastroSeguro.enviar_a_cotacao()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9652552100,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "valido a mensagem de sucesso no final do cadastro",
+            "match": {
+              "location": "Tests.CadastroSeguro.valido_a_mensagem_de_sucesso_no_final_do_cadastro()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@executa"
+          }
+        ]
+      }
+    ],
+    "name": "Acessar o site",
+    "description": " Como usuario quero realizar cadastro do meu carro no seguro",
+    "id": "acessar-o-site",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/Teste.feature",
+    "tags": [
+      {
+        "name": "@executa",
+        "type": "Tag",
+        "location": {
+          "line": 3,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
