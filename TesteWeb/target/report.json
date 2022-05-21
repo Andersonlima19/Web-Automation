@@ -1,19 +1,17 @@
 [
   {
-    "line": 4,
+    "line": 5,
     "elements": [
       {
-        "start_timestamp": "2022-02-23T23:13:54.941Z",
         "line": 8,
-        "name": "CT01 - Cadastrar automovel no seguro",
+        "name": "Site",
         "description": "",
-        "id": "acessar-o-site;ct01---cadastrar-automovel-no-seguro",
-        "type": "scenario",
-        "keyword": "Scenario",
+        "type": "background",
+        "keyword": "Background",
         "steps": [
           {
             "result": {
-              "duration": 14192811700,
+              "duration": 34949256900,
               "status": "passed"
             },
             "line": 9,
@@ -28,13 +26,24 @@
               "location": "Tests.CadastroSeguro.que_eu_esteja_no(java.lang.String)"
             },
             "keyword": "Given "
-          },
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-05-21T03:19:44.365Z",
+        "line": 12,
+        "name": "CT01 - Cadastrar automovel no seguro",
+        "description": "",
+        "id": "acessar-o-site;ct01---cadastrar-automovel-no-seguro",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
           {
             "result": {
-              "duration": 14135808500,
+              "duration": 27151010100,
               "status": "passed"
             },
-            "line": 10,
+            "line": 13,
             "name": "preencher todas as informacoes",
             "match": {
               "location": "Tests.CadastroSeguro.preencher_todas_as_informacoes()"
@@ -43,10 +52,10 @@
           },
           {
             "result": {
-              "duration": 1218069700,
+              "duration": 2419840600,
               "status": "passed"
             },
-            "line": 11,
+            "line": 14,
             "name": "Enviar a cotacao",
             "match": {
               "location": "Tests.CadastroSeguro.enviar_a_cotacao()"
@@ -55,13 +64,86 @@
           },
           {
             "result": {
-              "duration": 9652552100,
+              "duration": 10966813700,
               "status": "passed"
             },
-            "line": 12,
+            "line": 15,
             "name": "valido a mensagem de sucesso no final do cadastro",
             "match": {
               "location": "Tests.CadastroSeguro.valido_a_mensagem_de_sucesso_no_final_do_cadastro()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@executa"
+          }
+        ]
+      },
+      {
+        "line": 8,
+        "name": "Site",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 41240476500,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "que eu esteja no \"http://sampleapp.tricentis.com/101/index.php\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"http://sampleapp.tricentis.com/101/index.php\"",
+                  "offset": 17
+                }
+              ],
+              "location": "Tests.CadastroSeguro.que_eu_esteja_no(java.lang.String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-05-21T03:21:00.267Z",
+        "line": 18,
+        "name": "CT02 - Validar campo pesquisa",
+        "description": "",
+        "id": "acessar-o-site;ct02---validar-campo-pesquisa",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4419276800,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "digitar por \"cadastro\" no campo",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"cadastro\"",
+                  "offset": 12
+                }
+              ],
+              "location": "Tests.CadastroSeguro.digitar_por_no_campo(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1344890600,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "valido se o site me redireciona para a pagina de ajudaFs",
+            "match": {
+              "location": "Tests.CadastroSeguro.valido_se_o_site_me_redireciona_para_a_pagina_de_ajuda_fs()"
             },
             "keyword": "Then "
           }
@@ -83,7 +165,7 @@
         "name": "@executa",
         "type": "Tag",
         "location": {
-          "line": 3,
+          "line": 4,
           "column": 1
         }
       }
