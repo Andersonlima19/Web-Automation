@@ -2,6 +2,7 @@ package Tests;
 
 import java.io.IOException;
 
+import ElementosWeb.Campo_Pesquisa;
 import ElementosWeb.DadosCarro;
 import ElementosWeb.DadosProdutos;
 import ElementosWeb.DadosSegurador;
@@ -18,17 +19,18 @@ public class CadastroSeguro {
 	DadosSegurador ds = new DadosSegurador();
 	DadosProdutos dp = new DadosProdutos();
 	Enviarcotacao ec = new Enviarcotacao();
+	Campo_Pesquisa cp = new Campo_Pesquisa();
 
 	@Given("que eu esteja no {string}")
 	public void que_eu_esteja_no(String site) throws InterruptedException {
 		metodo.abrirNavegador(site);
-		metodo.esperar(3000);
-		metodo.clicar(dc.getAutomovel());
-
+		metodo.esperar(4000);
+	  
 	}
 
 	@When("preencher todas as informacoes")
 	public void preencher_todas_as_informacoes() throws IOException, InterruptedException {
+		metodo.clicar(dc.getAutomovel());
 		metodo.clicar(dc.getMarca());
 		metodo.escrever("1111", dc.getMotor());
 		metodo.escrever("01/02/2002", dc.getData());
@@ -54,7 +56,7 @@ public class CadastroSeguro {
 		metodo.screenShot("Tela 2");
 		metodo.clicar(ds.getProximaTela());
 		metodo.esperar(2000);
-		metodo.escrever("01/02/2029",dp.getDataincio());
+		metodo.escrever("01/02/2029", dp.getDataincio());
 		metodo.clicar(dp.getSomaseguro());
 		metodo.clicar(dp.getAvaliacao());
 		metodo.clicar(dp.getDanos());
@@ -89,7 +91,22 @@ public class CadastroSeguro {
 	public void valido_a_mensagem_de_sucesso_no_final_do_cadastro() throws InterruptedException {
 		metodo.esperar(9000);
 		metodo.validarTexto("Sending e-mail success!", ec.getMsg());
-	    metodo.fecharNavegador();
+		metodo.fecharNavegador();
+
+	}
+
+	@When("digitar por {string} no campo")
+	public void digitar_por_no_campo(String texto) throws InterruptedException, IOException {
+		metodo.escrever(texto,cp.getCampo() );
+		metodo.esperar(2000);
+		metodo.screenShot(texto);
+		metodo.clicar(cp.getClick());
+
+	}
+
+	@Then("valido se o site me redireciona para a pagina de ajudaFs")
+	public void valido_se_o_site_me_redireciona_para_a_pagina_de_ajuda_fs() {
+		metodo.fecharNavegador();
 
 	}
 
